@@ -1,0 +1,14 @@
+# Review Day 3: OOP
+Let's create some classes that interact with each other. We've already created birds, cats, and other things. Let's make some balls, ghosts, and Pacman objects.  
+  
+But how? What attributes and methods should they have? How will they interact with each other?  
+  
+Let's start with the Ball class.  
+  
+## Ball Class
+Objects of the type Ball should:  
+  
+  - take an optional argument called `ball_type`
+  - if no argument is given, the default `ball_type` should be `regular`
+```ruby
+```
