@@ -10,5 +10,13 @@ Objects of the type Ball should:
   
   - take an optional argument called `ball_type`
   - if no argument is given, the default `ball_type` should be `regular`
+  - `ball_type` should be readable
+  
 ```ruby
+class Ball
+  attr_reader :ball_type
+  def initialize(ball_type = "regular")
+    @ball_type = ball_type
+  end
+end
 ```
