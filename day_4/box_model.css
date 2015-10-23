@@ -1,0 +1,13 @@
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+
+  border: 5px solid;
+  padding-right: 10px;
+  padding-top: 15px;
+
+  /* Top / Right / Bottom / Left - TRBL */
+  margin: 10px 20px 15px 25px;
+
+}

@@ -4,7 +4,14 @@
     <meta charset="utf-8">
     <meta name="keywords" content="html, page, first, practice">
     <meta name="description" content="This is a practice HTML page">
+    <link rel="stylesheet" href="style.css">
     <title>My First HTML Page</title>
+    <style>
+      h2 {
+        color: blue;
+        font-size: 35px;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -13,7 +20,7 @@
       <a href="contact.html">Contact Us</a>
     </nav>
     <hr>
-    <h1>My First HTML Page</h1>
+    <h1 style="color: red; font-size: 38px;">My First HTML Page</h1>
     <h2>Paragraph Texts</h2>
     <p>Lorem ipsum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     <p>
@@ -21,7 +28,7 @@
     <h2 id="lists">Lists</h2>
     <h3>Unordered Lists</h3>
     <p>Languages to Learn</p>
-    <ul>
+    <ul class="special-list">
       <li>HTML</li>
       <li>Ruby</li>
       <li>CSS</li>
@@ -35,7 +42,7 @@
 
     <h3>Ordered Lists</h3>
     <p>Bootcamp Daily Routine</p>
-    <ol>
+    <ol class="special-list">
       <li>Wake up</li>
       <li>Code</li>
       <li>Have Coffee
@@ -87,11 +94,18 @@
       </tbody>
     </table>
 
-    <img src="http://vignette3.wikia.nocookie.net/happyfeet/images/9/95/Companions_adelie_penguins.jpg/revision/latest?cb=20140217220120" style="width: 40%">
-    <img src="images/penguin2.jpg" style="width: 40%">
+    <img src="http://vignette3.wikia.nocookie.net/happyfeet/images/9/95/Companions_adelie_penguins.jpg/revision/latest?cb=20140217220120">
+    <img src="images/penguin2.jpg">
 
     <a href="#">Top</a>
     <a href="#lists">Lists</a>
+
+    <p class="hi">Hi Again!</p>
+
+    <div class="box">
+      <p>Hello World</p>
+      <p class="hi">Hi</p>
+    </div>
 
     <hr>
     <p>&copy; Our Awesome HTML page. Copyright protected.</p>

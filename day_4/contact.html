@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <nav>
@@ -10,5 +11,42 @@
     </nav>
     <hr>
     <h1>Contact Us</h1>
+    <form action="" method="">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="e.g. John Smith" value="tam">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="e.g. john@smith.com">
+      </div>
+      <div>
+        <input type="checkbox" id="urgent" checked>
+        <label for="urgent">Urgent?</label>
+      </div>
+      <div>
+        <input type="radio" id="sales" name="department" value="sales">
+        <label for="sales">Sales</label>
+        <input type="radio" id="technical" name="department" checked  value="technical">
+        <label for="technical">Technical</label>
+        <input type="radio" id="marketing" name="department" value="marketing">
+        <label for="marketing">Marketing</label>
+      </div>
+      <div>
+        <label for="category">Category</label>
+        <select id="category">
+          <option hidden></option>
+          <option>Art</option>
+          <option selected>Sports</option>
+          <option>Cats</option>
+          <option>Penguins</option>
+        </select>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message"></textarea>
+      </div>
+      <input type="submit" value="Contact Us">
+    </form>
   </body>
 </html>

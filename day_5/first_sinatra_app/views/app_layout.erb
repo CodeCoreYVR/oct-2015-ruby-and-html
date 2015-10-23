@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Sinatra Application</title>
+    <style>
+      body {
+        background-color: <%= session[:last_color] %>;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      |
+      <a href="/hello">Hello</a>
+      |
+      <a href="/catch_phrase">Catch Phrase</a>
+      |
+      <a href="/contact">Contact</a>
+      |
+      <a href="/convertor">Temperature Convertor</a>
+      |
+      <%#= "Last converted temp: #{session[:last_temp]}" if session[:last_temp] %>
+      <% if session[:last_temp] %>
+        Last converted temp: <%= session[:last_temp] %>
+      <% end %>
+      |
+      <a href="/change_color?color=red">Red</a>
+      <a href="/change_color?color=blue">Blue</a>
+      <a href="/change_color?color=green">Green</a>
+    </nav>
+    <hr>
+    <%= yield %>
+  </body>
+</html>

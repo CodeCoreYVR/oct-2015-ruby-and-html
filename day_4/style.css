@@ -1,0 +1,73 @@
+body {
+  background: url('images/confectionary.png');
+}
+
+h3 {
+  color: #ff0000;
+}
+
+p {
+  text-decoration: underline;
+  background-color: cyan;
+}
+
+img {
+  width: 100px;
+}
+
+/* this targets the element that has id of lists */
+#lists {
+  color: purple;
+}
+
+/* this targets all ul and ol elements */
+ul, ol {
+  font-size: 16px;
+}
+
+/* this targets all elements that has class 'special-list' */
+.special-list {
+  text-decoration: line-through;
+}
+
+/* this targets all li elements nested inside ul elements */
+ul li {
+  color: red;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
+
+.box p {
+  background-color: blue;
+  color: yellow;
+}
+
+/* this targets an element with class hi within an element
+  with a class box */
+.box .hi {
+  color: cyan;
+}
+
+/* this targets an element p with class hi */
+p.hi {
+  text-decoration: line-through;
+}
+
+/* How to Style a <p> element that has a class “abc” and an id “xyz” */
+p.abc#xyz {
+
+}
+
+/* How to style all <p> elements within a <div> with a class “special” */
+div.special p {
+
+}
+
+/* How to style all <li> elements within a <ul> element that has class “special” */
+ul.special li {
+  
+}

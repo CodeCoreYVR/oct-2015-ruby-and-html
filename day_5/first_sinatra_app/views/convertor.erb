@@ -1,0 +1,7 @@
+<form action="/convertor" method="post">
+  <input type="text" name="temp" value="<%= @temp_c %>">
+  <input type="submit" value="Convert To F">
+</form>
+<% if @temp_f %>
+  <%= @temp_f %>
+<% end %>
