@@ -33,3 +33,33 @@ class Ghost
   end
 end
 ```
+## Pacman Class
+Let's take a moment now, and really think: What should our Pacman class do?  
+  
+We don't want to make things overly complicated, so let's not worry about game mechanics, the game world, or even about movement! Let's just focus on some very important features.  
+  
+Objects of the type Pacman should:  
+  
+  - initialize with:
+    + a regular state (super or not)
+    + 2 extra lives
+    + 0 points
+
+  - have methods to:
+    + eat
+      * should handle balls and ghosts
+      * get 1 point when eating a regular ball
+      * get 5 points when eating a super ball
+        - and state changes to super
+      * die when eating a ghost
+      * get 10 points when eating a ghost
+
+```ruby
+class Pacman
+  def initialize
+    @super_time = 0
+    @extra_lives = 2
+    @points = 0
+  end
+end
+```
