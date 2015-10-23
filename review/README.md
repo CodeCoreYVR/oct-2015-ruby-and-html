@@ -20,3 +20,16 @@ class Ball
   end
 end
 ```
+## Ghost Class
+Objects of the type Ghost should:  
+  
+  - initialize with a random color of "yellow, white, pink, blue"
+
+```ruby
+class Ghost
+  attr_reader :color
+  def initialize
+    @color = %w| yellow white pink blue |.sample
+  end
+end
+```
