@@ -85,4 +85,44 @@ post '/new_song' do
   "You entered the song #{params[:title]} and the link: #{params[:video_link]}"
 end
 ```
+Now that we have a way to capture song params, let's actually store them somewhere. We'll use sessions for this. With sinatra, to enable sessions, you simply add `enable: :sessions` to your main app file.
 
+```ruby
+# app.rb
+require 'sinatra'
+
+enable :sessions
+
+get '/' do
+  @songs = session[:songs] ? session[:songs] : {}
+  erb :index, layout: :default
+end
+
+get '/new_song' do
+  erb :song_form, layout: :default
+end
+
+post '/new_song' do
+  session[:songs] = {} unless session[:songs]
+  session[:songs][params[:title]] = params[:video_link]
+  redirect to('/')
+end
+```
+And let's add a way to display songs to the index view
+```erb
+<h1>My Favorite Songs</h1>
+
+<table>
+  <tr>
+    <th>title</th>
+    <th>video link</th>
+  </tr>
+  <% @songs.each do |title, video_link| %>
+    <tr>
+      <td><%= title %></td>
+      <td><a href="<%= video_link %>">watch video</a></td>
+    </tr>
+  <% end %>
+</table>
+```
+Play around with that a little, and have a great weekend!

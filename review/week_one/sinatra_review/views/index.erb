@@ -1,1 +1,14 @@
 <h1>My Favorite Songs</h1>
+
+<table>
+  <tr>
+    <th>title</th>
+    <th>video link</th>
+  </tr>
+  <% @songs.each do |title, video_link| %>
+    <tr>
+      <td><%= title %></td>
+      <td><a href="<%= video_link %>">watch video</a></td>
+    </tr>
+  <% end %>
+</table>
