@@ -1,9 +1,13 @@
 require 'sinatra'
 
 get '/' do
-  erb :index
+  erb :index, layout: :default
 end
 
 get '/new_song' do
-  "display a form"
+  erb :song_form, layout: :default
+end
+
+post '/new_song' do
+  "You entered the song #{params[:title]}, and the link #{params[:video_link]}"
 end

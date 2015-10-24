@@ -30,3 +30,59 @@ end
 <% # home/index.erb %>
 <h1>My Favorite Songs</h1>
 ```
+Now, we want to add in a navigation menu that's the same on every page of our site. Let's do this with a `layout`.
+```ruby
+# app.rb
+require 'sinatra'
+
+get '/' do
+  erb :index, layout: :default
+end
+```
+Now that we've specified a layout called `:default`, our program will be expecting this view file to exist inside the `views` directory. Let's make sure that it does.
+```erb
+<a href="/">home</a> | <a href="/new_song">new song</a>
+
+<%= yield %>
+```
+Let's add another method for `/new_song` to display a form. This should also use the default layout, but this time, we'll have a form on the view file.
+```ruby
+# app.rb
+require 'sinatra'
+
+get '/' do
+  erb :index, layout: :default
+end
+
+get '/new_song' do
+  erb :song_form, layout: :default
+end
+```
+And add the view with a form on it!
+```erb
+<% # views/song_form.erb %>
+<h1>Add a New Song</h1>
+
+<form method="post">
+  title: <input name="title"><br>
+  video link: <input name="video_link"><br>
+  <input type="submit">
+</form>
+```
+Now that we have a post request happening at `/new_song`, we need our app to handle it. Because we have named our inputs, we have a params hash with the input names as the keys. And of course, the input as the values. Let's use that the method that handles post requests on `/new_song`.
+```ruby
+require 'sinatra'
+
+get '/' do
+  erb :index, layout: :default
+end
+
+get '/new_song' do
+  erb :song_form, layout: :default
+end
+
+post '/new_song' do
+  "You entered the song #{params[:title]} and the link: #{params[:video_link]}"
+end
+```
+
