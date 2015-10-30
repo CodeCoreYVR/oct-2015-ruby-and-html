@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>absolute, relative positioning</title>
+    <style>
+      body {
+        font-family: Arial;
+        font-size: 15px;
+        padding: 35px;
+        background-color: #C9E4E8;
+      }
+      h1 {
+        position: relative;
+        bottom: 5px;
+        right: 5px;
+      }
+      p {
+        //position: relative;
+      }
+      div.container {
+        background-color: #FFF;
+        padding: 20px 20px 0px 20px;
+        border: 2px solid #82AFB4;
+        position: relative;
+      }
+      div.footer {
+        font-weight: bold;
+        background-color: #82AFB4;
+        color: #FFF;
+        padding: 7px 20px;
+      }
+      img {
+        border: 2px solid #82AFB4;
+        //position: absolute;
+        bottom: 0px;
+        right: 0px;
+      }
+      div.footer p {
+        margin:0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Relative and Absolute Positioning</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+      <img src="images/logo.jpg">
+    </div>
+    <div class="footer">
+      <p>&copy;2015 Codecore Developer Bootcamp</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>web layout</title>
+    <style>
+      div {
+        background-color: grey;
+        font-size: 38px;
+        color: white;
+      }
+
+      .no-layout {
+        padding: 10px;
+        margin: 10px;
+      }
+
+      navbar, .navbar {
+        background-color: grey;
+        width: 100%;
+        height: 100px;
+        float: left;
+      }
+      sidebar, .sidebar {
+        background-color: grey;
+        margin-top: 10px;
+        width: 25%;
+        min-height: 400px;
+        display: inline-block;
+        float: right;
+      }
+      main, .main-content {
+        background-color: orange;
+        margin-top: 10px;
+        width: 75%;
+        display: inline-block;
+        min-height: 400px;
+        float: left;
+      }
+      footer, .footer {
+        background-color: grey;
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        clear: left;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Turn this:</h1>
+    <div class="no-layout">Navbar</div>
+    <div class="no-layout">Sidebar</div>
+    <div class="no-layout">Main</div>
+    <div class="no-layout">Footer</div>
+
+    <h1>Into this:</h1>
+    <div class="navbar">Navbar</div>
+    <div class="clear"></div>
+    <div class="sidebar">Sidebar</div>
+    <div class="main-content">Main</div>
+    <div class="footer">Footer</div>
+
+    <hr>
+    <!--HTML5 Semantic Elements-->
+    <!--if you plan on using them be sure to read http://www.w3schools.com/html/html5_browsers.asp-->
+    <h1>HTML5 Semantic Elemnts</h1>
+    <navbar>
+    </navbar>
+
+    <sidebar>
+    </sidebar>
+    <main>
+    </main>
+
+    <footer>
+    </footer>
+  </body>
+</html>

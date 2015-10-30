@@ -1,0 +1,23 @@
+.box {
+  height: 100px;
+}
+
+.divider {
+  height: 20px;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}

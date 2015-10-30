@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>inline, block, inline-block</title>
+    <style>
+      body {
+        font-size: 38px;
+        font-weight: bold;
+      }
+      span {
+        color: orange;
+        background-color: blue;
+        display: inline;
+        width: 200px; /* inline ignored */
+        height: 200px; /* inline ignored */
+        margin: 100px 50px; /* top and bottom, inline ignored */
+        padding: 100px 50px; /* text baseline retained */
+
+        /* elements will overlap in inline,
+           but will not affect position of other elements */
+      }
+      p {
+        margin-left: 100px;
+        color: white;
+        background-color: green;
+        width: 33%;
+        padding: 30px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- inline element -->
+    The &lt;span&gt; element is an example of an <span>inline element</span>.
+
+    <!-- block element -->
+    <p>The &lt;p&gt; element is an example of a block element.</p>
+  </body>
+</html>
