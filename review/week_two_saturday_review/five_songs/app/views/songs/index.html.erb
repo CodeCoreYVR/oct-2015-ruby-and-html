@@ -8,7 +8,7 @@
   <% @songs.each do |song| %>
     <tr>
       <td><%= song.title %></td>
-      <td><%= song.video_link %></td>
+      <td><%= link_to "watch video", song.video_link %></td>
     </tr>
   <% end %>
 </table>
