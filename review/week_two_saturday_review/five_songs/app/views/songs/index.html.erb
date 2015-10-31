@@ -1,0 +1,14 @@
+<h1>Five Songs</h1>
+
+<table>
+  <tr>
+    <th>title</th>
+    <th>video link</th>
+  </tr>
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= song.title %></td>
+      <td><%= song.video_link %></td>
+    </tr>
+  <% end %>
+</table>
