@@ -8,7 +8,11 @@
 </head>
 <body>
 
-<%= yield %>
+  <nav>
+    <%= link_to "home", root_path %> | 
+    <%= link_to "add song", new_song_path %>
+  </nav>
+  <%= yield %>
 
 </body>
 </html>

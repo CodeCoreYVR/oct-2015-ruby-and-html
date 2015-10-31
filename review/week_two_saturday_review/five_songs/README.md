@@ -17,6 +17,8 @@ Our root route should point to the songs index.
 # config/routes.rb
 Rails.application.routes.draw do
   root "songs#index"
+
+  #resources :songs, only: [:new]
 end
 ```
 ## Controllers
@@ -54,6 +56,34 @@ Our view files should be located in a directory called songs that exists within 
   </table>
 
 ```
+  
+### Navigation
+We want to add `home` and `add song` (new song) links to a navigation menu. We could do this individually for each view. However, since we want the same things to display on all our views, it might make more sense to just add it to the application layout.
+
+```erb
+<% # app/views/layouts/application.html.erb %>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FiveSongs</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav>
+    <%= link_to "home", root_path %> | 
+    <%= link_to "add song", new_song_path %>
+  </nav>
+
+  <%= yield %>
+
+</body>
+</html>
+```
+
 ## Models
 Let's add a Song model. We want it to have titles and video links, and that's about it.  
   
