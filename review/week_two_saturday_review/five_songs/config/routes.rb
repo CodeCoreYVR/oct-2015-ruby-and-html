@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root "songs#index"
 
-  resources :songs, only: [:new]
+  resources :songs, only: [:new, :create]
 end

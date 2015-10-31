@@ -18,7 +18,7 @@ Our root route should point to the songs index.
 Rails.application.routes.draw do
   root "songs#index"
 
-  #resources :songs, only: [:new]
+  resources :songs, only: [:new, :create]
 end
 ```
 ## Controllers
@@ -31,6 +31,19 @@ class SongsController < ApplicationController
 
   def index
     @songs = Song.all
+  end
+
+  def new
+    @new = Song.new
+  end
+
+  def create
+    @song = Song.new(params.require(:song).permit([:title, :video_link]))
+    if @song.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
 end
@@ -57,6 +70,25 @@ Our view files should be located in a directory called songs that exists within 
 
 ```
   
+```erb
+<% # app/views/songs/new.html.erb %>
+
+<h1>New Song</h1>
+
+<%= form_for @song do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div>
+    <%= f.label :video_link %>
+    <%= f.text_field :video_link, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-default" %>
+  </div>
+<% end %>
+```
 ### Navigation
 We want to add `home` and `add song` (new song) links to a navigation menu. We could do this individually for each view. However, since we want the same things to display on all our views, it might make more sense to just add it to the application layout.
 
