@@ -55,18 +55,18 @@ Our view files should be located in a directory called songs that exists within 
 <% # app/views/songs/index.html.erb %>
 <h1>Five Songs</h1>
 
-  <table>
+<table>
+  <tr>
+    <th>title</th>
+    <th>video link</th>
+  </tr>
+  <% @songs.each do |song| %>
     <tr>
-      <th>title</th>
-      <th>video link</th>
+      <td><%= song.title %></td>
+      <td><%= link_to "watch", song.video_link %></td>
     </tr>
-    <% @songs.each do |song| %>
-      <tr>
-        <td><%= song.title %></td>
-        <td><%= link_to "watch", song.video_link %></td>
-      </tr>
-    <% end %>
-  </table>
+  <% end %>
+</table>
 
 ```
   
