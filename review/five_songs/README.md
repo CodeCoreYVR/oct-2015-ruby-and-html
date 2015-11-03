@@ -24,13 +24,14 @@ end
 ## Controllers
 As was quite evident by the error message we received, we have no songs controller. Let's go ahead and add that controller, and an index action within it.  
   
+The index action should return a collection of the most recently added five songs.
 ```ruby
 # app/controllers/songs_controller.rb
 
 class SongsController < ApplicationController
 
   def index
-    @songs = Song.all
+    @songs = Song.recent_five # we will have to create this method in the model
   end
 
   def new
@@ -139,11 +140,16 @@ class CreateSongs < ActiveRecord::Migration
   end
 end
 ```
-And of course, it also generated the model
+And of course, it also generated the model, where we can _finally_ add that `recent_five` method.
 ```ruby
 # app/models/song.rb
 
 class Song < ActiveRecord::Base
+
+  def self.recent_five
+    order("created_at DESC").limit(5)
+  end
+
 end
 ```
 Let's run `bin/rake db:migrate` to create the table in the database,
