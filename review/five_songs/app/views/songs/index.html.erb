@@ -4,11 +4,15 @@
   <tr>
     <th>title</th>
     <th>video link</th>
+    <th>edit song</th>
+    <th>delete song</th>
   </tr>
   <% @songs.each do |song| %>
     <tr>
       <td><%= song.title %></td>
       <td><%= link_to "watch video", song.video_link %></td>
+      <td><%= link_to "edit song", edit_song_path(song), class: "btn btn-default" %></td>
+      <td><%= link_to "delete song", song_path(song), {method: :delete, class: "btn btn-default"} %></td>
     </tr>
   <% end %>
 </table>
