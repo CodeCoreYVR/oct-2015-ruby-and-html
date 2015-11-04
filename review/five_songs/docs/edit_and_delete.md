@@ -61,7 +61,7 @@ And of course, we need to have the form partial to be displayed.
 
 ## Routes
 Now that we have our form partial sorted out, and have added an edit view, let's add routes to match edit (and update) and destroy. *note*: You can check your routes at [localhost:3000/rails/info/routes](http://localhost:3000/rails/info/routes) if your rails server is running on port 3000.
-```erb
+```rb
 # config/routes.rb
 
 Rails.application.routes.draw do
@@ -111,7 +111,73 @@ class SongsController < ApplicationController
   def destroy
     @song = Song.find(params[:id])
     @song.destroy
+    redirect_to root_path
   end
+
+end
+```
+## Refactoring
+Let's take a look at our routes. What is different, if we now just specify `resources :songs`?
+```
+# config/routes.rb
+
+Rails.application.routes.draw do
+  root "songs#index"
+
+  resources :songs
+end
+```
+And, let's checkout our controller. We are finding `@song` in three actions: edit, update, and destroy. Also, we're passing in the same params for the create and update actions.  
+  
+Let's break that logic out into private methods, and even call a before action where applicable.
+```rb
+# app/controllers/songs_controller.rb
+
+class SongsController < ApplicationController
+  before_action :find_song, only: [:edit, :update, :destroy]
+
+  def index
+    @songs = Song.recent_five
+  end
+
+  def new
+    @song = Song.new
+  end
+
+  def create
+    @song = Song.new(song_params)
+    if @song.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @song.update_attributes(song_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @song.destroy
+    redirect_to root_path
+  end
+
+  private
+
+    def song_params
+      params.require(:song).permit([:title, :video_link])
+    end
+
+    def find_song
+      @song = Song.find(params[:id])
+    end
 
 end
 ```

@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+  before_action :find_song, only: [:update, :destroy]
 
   def index
     @songs = Song.recent_five
@@ -9,7 +10,7 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(params.require(:song).permit([:title, :video_link]))
+    @song = Song.new(song_params)
     if @song.save
       redirect_to root_path
     else
@@ -22,8 +23,7 @@ class SongsController < ApplicationController
   end
 
   def update
-    @song = Song.find(params[:id])
-    if @song.update_attributes(params.require(:song).permit([:title, :video_link]))
+    if @song.update_attributes(song_params)
       redirect_to root_path
     else
       render :edit
@@ -31,8 +31,18 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    @song = Song.find(params[:id])
     @song.destroy
     redirect_to root_path
   end
+
+  private
+
+    def song_params
+      params.require(:song).permit([:title, :video_link])
+    end
+
+    def find_song
+      @song = Song.find(params[:id])
+    end
+
 end
