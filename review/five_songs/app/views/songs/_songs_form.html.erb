@@ -1,0 +1,13 @@
+<%= form_for @song do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :video_link %>
+    <%= f.text_field :video_link, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-default" %>
+  </div>
+<% end %>
