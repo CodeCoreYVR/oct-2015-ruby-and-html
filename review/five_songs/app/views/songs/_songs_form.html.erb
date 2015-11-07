@@ -1,4 +1,4 @@
-<%= form_for @song do |f| %>
+<%= form_for [@album, @song], url: album_song_path(@album) do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: "form-control" %>

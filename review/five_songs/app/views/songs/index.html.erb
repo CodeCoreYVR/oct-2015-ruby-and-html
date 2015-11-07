@@ -11,8 +11,8 @@
     <tr>
       <td><%= song.title %></td>
       <td><%= link_to "watch video", song.video_link %></td>
-      <td><%= link_to "edit song", edit_song_path(song), class: "btn btn-default" %></td>
-      <td><%= link_to "delete song", song_path(song), {method: :delete, class: "btn btn-default"} %></td>
+      <td><%= link_to "edit song", edit_album_song_path(song.album, song), class: "btn btn-default" %></td>
+      <td><%= link_to "delete song", album_song_path(song.album, song), {method: :delete, class: "btn btn-default"} %></td>
     </tr>
   <% end %>
 </table>

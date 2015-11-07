@@ -1,0 +1,14 @@
+<h1><%= @album.title %></h1>
+
+<table>
+  <tr>
+    <th>song title</th>
+    <th>video link</th>
+  </tr>
+  <% @album.songs.each do |song| %>
+    <tr>
+      <td><%= song.title %></td>
+      <td><%= link_to "watch video", song.video_link %></td>
+    </tr>
+  <% end %>
+</table>

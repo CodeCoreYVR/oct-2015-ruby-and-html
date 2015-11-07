@@ -6,7 +6,8 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new
+    @album = Album.find(params[:album_id])
+    @song = @album.songs.new
   end
 
   def create
