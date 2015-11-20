@@ -1,0 +1,59 @@
+.responsive-box {
+  width: 33.333%;
+}
+
+.inner-box {
+  height: 200px;
+  border-radius: 10px;
+  border: 4px dotted;
+  margin: 10px;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+@media (min-width: 600px) {
+  .responsive-box {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 600px) {
+  .responsive-box {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+
+
+
+
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 2px solid;
+}
+
+@media (min-width: 600px) {
+  .box {
+    background-color: red;
+  }
+}
+
+@media (max-width: 600px) {
+  .box {
+    background-color: green;
+  }
+}

@@ -1,0 +1,13 @@
+.info {
+  width: 800px;
+  height: 800px;
+  background-color: red;
+}
+
+img {
+  width: 300px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,14 @@
+.info {
+  width: 100px;
+  height: 35px;
+  border: 1px solid;
+  background-color: orange;
+
+  position: fixed;
+  right: 20px;
+  bottom: 0;
+}
+
+.small-img {
+  width: 100px;
+}

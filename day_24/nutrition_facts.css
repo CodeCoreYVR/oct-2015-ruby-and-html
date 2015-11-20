@@ -1,0 +1,29 @@
+table {
+  border: 1px solid;
+  border-radius: 5px;
+  width: 25%;
+  border-spacing: 0;
+}
+
+td {
+  border-top: 1px solid;
+  padding-left: 5px;
+}
+
+th {
+  font-size: 30px;
+  text-align: center;
+}
+
+td.values {
+  width: 50%;
+  text-align: center;
+}
+
+.indented {
+  padding-left: 15px;
+}
+
+.thick-border {
+  border-top: 10px solid;
+}

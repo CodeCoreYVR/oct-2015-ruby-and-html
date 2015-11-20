@@ -1,0 +1,12 @@
+@keyframes switchcolor {
+  from {background-color: red}
+  to   {background-color: yellow}
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  animation-name: switchcolor;
+  animation-duration: 1ats;
+}
